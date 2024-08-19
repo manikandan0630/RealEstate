@@ -1,6 +1,10 @@
 import express from "express"
 import mongoose from "mongoose";
 import dotenv from "dotenv"
+
+import AuthRouter from "./routes/auth.route.js";
+
+
 dotenv.config();
 
 mongoose.connect(process.env.MONGO)
@@ -9,15 +13,10 @@ mongoose.connect(process.env.MONGO)
 })
 
 const app=express();
+app.use(express.json())
 
-app.get("/",(req,res)=>{
-    res.json(
-
-       {
-        Message:"Success"
-       }
-    )
-})
 app.listen(4000,()=>{
     console.log("Server is running")}
 );
+
+app.use("/api/auth",AuthRouter);
