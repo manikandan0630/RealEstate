@@ -1,6 +1,6 @@
 import UserModel from "../model/UserModel.js";
 import bcryptjs from "bcryptjs";
-import ErrorHandle from "../utils/error.js"
+// import ErrorHandle from "../utils/error.js"
 
  const signup=async(req,res,next)=>{
     const {username,email,password}=req.body;
@@ -12,7 +12,7 @@ import ErrorHandle from "../utils/error.js"
             Message:"User Created Successfully"
         })
     }catch(Error){
-       next(Error)
+     next(Error)
     }
    
 }
