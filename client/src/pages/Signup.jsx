@@ -74,6 +74,7 @@ export default function Signup() {
         >
           {loading ? "Loading..." : "SIGNUP"}
         </button>
+        <Google />  
       </form>
       <div className="flex gap-1 mt-5">
         <p>Have an account?</p>
